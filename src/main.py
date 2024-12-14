@@ -1,6 +1,7 @@
 from datetime import datetime
 import sys
 
+from ultralytics import YOLO
 import cv2
 
 # Get input from camera
