@@ -23,7 +23,6 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
     cv2.imshow('frame', gray)
-    cv2.imwrite(f'{datetime.now()}.jpg', frame)
 
     # Wait one millisecond and return the key pressed
     key = cv2.waitKey(1)

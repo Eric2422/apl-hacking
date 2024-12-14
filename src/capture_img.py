@@ -37,7 +37,7 @@ while True:
     key = cv2.waitKey(1)
 
     # 27 is the ASCII code for escape
-    if key == 27:
+    if key == 27 or key == ord('q'):
         break
 
 cv2.destroyAllWindows()
