@@ -3,6 +3,14 @@ import sys
 
 import cv2
 
+if len(sys.argv) < 2:
+    raise ValueError('Passs in either "positive" or "negative"')
+
+if sys.argv[2] != 'positive' and sys.argv[2] != 'negative':
+    raise ValueError('Passs in either "positive" or "negative"')
+
+write_dir = sys.argv[2]
+
 # Get input from camera
 capture = cv2.VideoCapture(0)
 
@@ -23,7 +31,7 @@ while True:
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
     cv2.imshow('frame', gray)
-    cv2.imwrite(f'{datetime.now()}.jpg', frame)
+    cv2.imwrite(f'./{write_dir}/{datetime.now()}.jpg', gray)
 
     # Wait one millisecond and return the key pressed
     key = cv2.waitKey(1)
